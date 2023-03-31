@@ -8,9 +8,9 @@ class Solution {
     }
    public void func(List<String> ans, int count, char[] s,HashSet<String> set){
 //        System.out.println("count is "+count);
-        if(set.contains(String.valueOf(s))){
-            return;
-        }
+        // if(set.contains(String.valueOf(s))){
+        //     return;
+        // }
         if(s.length==count){
 //            System.out.println("here");
             ans.add(String.valueOf(s));
@@ -23,13 +23,13 @@ class Solution {
             func(ans,count+1,s,set);
             return;
         }
-        for(int i=count;i<s.length;i++){
+        
            func(ans,count+1,s,set);
-            inverter(s,i);
+            inverter(s,count);
             func(ans,count+1,s,set);
             // inverter(s,i);
 
-        }
+        
     }
     public void inverter(char arr[],int i){
         if(Character.isUpperCase(arr[i])){
