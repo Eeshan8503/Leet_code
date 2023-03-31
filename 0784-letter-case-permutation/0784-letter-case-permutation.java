@@ -2,11 +2,11 @@ class Solution {
     public List<String> letterCasePermutation(String s) {
          char[] arr =s.toCharArray();
          List<String> ans=new ArrayList<>();
-        HashSet<String> set=new HashSet<>();
-        func(ans,0,arr,set);
+        // HashSet<String> set=new HashSet<>();
+        func(ans,0,arr);
         return ans;
     }
-   public void func(List<String> ans, int count, char[] s,HashSet<String> set){
+   public void func(List<String> ans, int count, char[] s){
 //        System.out.println("count is "+count);
         // if(set.contains(String.valueOf(s))){
         //     return;
@@ -14,19 +14,19 @@ class Solution {
         if(s.length==count){
 //            System.out.println("here");
             ans.add(String.valueOf(s));
-            set.add(String.valueOf(s));
+            // set.add(String.valueOf(s));
 //            System.out.println(String.valueOf(s));
             return;
         }
         if(Character.isDigit(s[count])){
 //            System.out.println("Digit encounterd "+s[count]);
-            func(ans,count+1,s,set);
+            func(ans,count+1,s);
             return;
         }
         
-           func(ans,count+1,s,set);
+           func(ans,count+1,s);
             inverter(s,count);
-            func(ans,count+1,s,set);
+            func(ans,count+1,s);
             // inverter(s,i);
 
         
