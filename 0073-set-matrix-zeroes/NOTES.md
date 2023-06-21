@@ -1,0 +1,1 @@
+Use first row amd column to keep track of initial zeros
