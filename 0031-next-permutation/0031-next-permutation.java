@@ -1,3 +1,31 @@
+/*
+find breakpoint
+
+
+
+|
+|                                      (.)
+|                                                .
+|                           .                         .
+|                                                          .
+________________________________________________________________________________
+
+breakpint index is ind
+ swap ind with the number just greatest than it
+ 
+ reverse remaining numbers
+ since they were all sorted
+ */
+
+
+
+
+
+
+
+
+
+
 class Solution {
     public void nextPermutation(int[] nums) {
         int n=nums.length;
