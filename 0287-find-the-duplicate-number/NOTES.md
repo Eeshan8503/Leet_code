@@ -1,1 +1,1 @@
-​
+make an auxilary array au and the store the map
