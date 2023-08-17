@@ -17,8 +17,12 @@ class Solution {
         vis[node]=true;
         for(int i:graph[node]){
              if(color[i]==-1){
-                if(!dfs(i,graph,color,vis,1-col))
+                // return dfs(i,graph,color,vis,1-col);
+                 
+                 
+                 if(!dfs(i,graph,color,vis,1-col))
                     return false;
+                
              }
              if(color[i]==col){
                  return false;
