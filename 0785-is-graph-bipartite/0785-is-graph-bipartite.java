@@ -1,4 +1,36 @@
 class Solution {
+    public boolean isBipartite(int[][] graph) {
+        boolean vis[]=new boolean[graph.length];
+        Arrays.fill(vis,false);
+        int color[]=new int[graph.length];
+        Arrays.fill(color,-1);
+        boolean ans=true;
+        for(int i=0;i<graph.length;i++){
+            if(!vis[i]){
+                ans=ans && dfs(i,graph,color,vis,0);
+            }
+        }
+        return ans;
+    }
+    public boolean dfs(int node,int graph[][],int color[],boolean vis[],int col){
+        color[node]=col;
+        vis[node]=true;
+        for(int i:graph[node]){
+             if(color[i]==-1){
+                if(!dfs(i,graph,color,vis,1-col))
+                    return false;
+             }
+             if(color[i]==col){
+                 return false;
+             }
+        }
+        return true;
+    }
+}
+
+/*
+
+class Solution {
     public boolean isBipartite(int graph[][]){
          int coloured[]=new int[graph.length];
          Arrays.fill(coloured,-1);
@@ -42,3 +74,5 @@ class Solution {
         return true;
     }
 }
+
+*/
